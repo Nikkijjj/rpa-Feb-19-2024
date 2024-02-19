@@ -1,5 +1,5 @@
 # front part
-from flask import flask,request,render_template
+from flask import Flask,request,render_template
 
 app = Flask(_name_)
 
