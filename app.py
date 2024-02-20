@@ -3,7 +3,7 @@ from flask import Flask,request,render_template
 app = Flask(__name__)
 
 r = ""
-global first_time = 1
+first_time = 1
 
 @app.route("/",methods=["GET","POST"])
 def index():
