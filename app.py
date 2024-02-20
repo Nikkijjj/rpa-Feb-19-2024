@@ -23,9 +23,8 @@ def image_gpt():
 
 @app.route("/end", methods=["GET","POST"])
 def end():
-  global first_time=1
+  global first_time = 1
   return (render_template("end.html"))
-
 
 if __name__ == "__main__":
   app.run()
