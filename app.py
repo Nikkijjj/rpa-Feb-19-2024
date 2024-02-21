@@ -21,6 +21,10 @@ def main():
 def image_gpt():
   return (render_template("image_gpt.html"))
 
+@app.route("/image_result", methods=["GET","POST"])
+def image_gpt():
+  return (render_template("image_result.html"))
+
 @app.route("/end", methods=["GET","POST"])
 def end():
   first_time = 1
