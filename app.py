@@ -4,10 +4,11 @@ import replicate
 import os
 import time
 
-model = OpenAI(api_key="sess-bmQne3AjShF5VgUhlh9GKbV57wIhrcdlDTbcVBMs")
+os.environ["REPLICATE_API_TOKEN"] = "r8_LQBrEtBcljk7Z3uqYNGOIwUoiREHa4u3yeGyC"
+openai_api_key=os.environ["OPENAI_API_TOKEN"] = "r8_LQBrEtBcljk7Z3uqYNGOIwUoiREHa4u3yeGyC"
+model = OpenAI(api_key=openai_api_key)
 
 app = Flask(__name__)
-os.environ["REPLICATE_API_TOKEN"] = "r8_LQBrEtBcljk7Z3uqYNGOIwUoiREHa4u3yeGyC"
 
 r = ""
 first_time = 1
