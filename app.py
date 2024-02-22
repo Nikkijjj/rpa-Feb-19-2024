@@ -65,6 +65,18 @@ def text_result():
 def text_ntu():
     return render_template("text_ntu.html")
 
+@app.route("/image_ntu", methods=["GET", "POST"])
+def image_ntu():
+    return render_template("image_ntu.html")
+
+@app.route("/text_ntu", methods=["GET", "POST"])
+def building_ntu():
+    return render_template("building_ntu.html")
+
+@app.route("/activities_ntu", methods=["GET", "POST"])
+def activities_ntu():
+    return render_template("activities_ntu.html")
+
 
 @app.route("/end", methods=["GET", "POST"])
 def end():
