@@ -69,7 +69,7 @@ def text_ntu():
 def image_ntu():
     return render_template("image_ntu.html")
 
-@app.route("/text_ntu", methods=["GET", "POST"])
+@app.route("/building_ntu", methods=["GET", "POST"])
 def building_ntu():
     return render_template("building_ntu.html")
 
