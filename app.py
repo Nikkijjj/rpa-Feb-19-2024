@@ -81,7 +81,7 @@ def activities_ntu():
 @app.route("/website_ntu", methods=["GET", "POST"])
 def website_ntu():
     if request.method == "POST":
-        website_url = "https://www.example.com"
+        website_url = "https://www.ntu.edu.sg/"
         return redirect(website_url)
 
 @app.route("/end", methods=["GET", "POST"])
