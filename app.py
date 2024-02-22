@@ -1,4 +1,5 @@
 from flask import Flask, request, render_template
+from flask import redirect, url_for
 from openai import OpenAI
 import replicate
 import os
@@ -77,9 +78,11 @@ def building_ntu():
 def activities_ntu():
     return render_template("activities_ntu.html")
     
-@app.route("/website_ntu", methods=["GET", "POST"])
-def website_ntu():
-    return render_template("website_ntu.html")
+@app.route("/redirect_to_website", methods=["GET", "POST"])
+def redirect_to_website():
+    if request.method == "POST":
+        website_url = "https://www.example.com"
+        return redirect(website_url)
 
 @app.route("/end", methods=["GET", "POST"])
 def end():
