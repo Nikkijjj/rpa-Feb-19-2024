@@ -78,8 +78,8 @@ def building_ntu():
 def activities_ntu():
     return render_template("activities_ntu.html")
     
-@app.route("/redirect_to_website", methods=["GET", "POST"])
-def redirect_to_website():
+@app.route("/website_ntu", methods=["GET", "POST"])
+def website_ntu():
     if request.method == "POST":
         website_url = "https://www.example.com"
         return redirect(website_url)
