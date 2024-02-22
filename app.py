@@ -61,6 +61,10 @@ def text_result():
     time.sleep(5)
     return render_template("text_result.html", r=r.choices[0].message.content)
 
+@app.route("/text_ntu", methods=["GET", "POST"])
+def text_ntu():
+    return render_template("text_ntu.html")
+
 
 @app.route("/end", methods=["GET", "POST"])
 def end():
