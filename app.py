@@ -76,7 +76,10 @@ def building_ntu():
 @app.route("/activities_ntu", methods=["GET", "POST"])
 def activities_ntu():
     return render_template("activities_ntu.html")
-
+    
+@app.route("/website_ntu", methods=["GET", "POST"])
+def website_ntu():
+    return render_template("website_ntu.html")
 
 @app.route("/end", methods=["GET", "POST"])
 def end():
