@@ -5,9 +5,8 @@ import os
 import time
 
 os.environ["REPLICATE_API_TOKEN"] = "r8_LQBrEtBcljk7Z3uqYNGOIwUoiREHa4u3yeGyC"
-openai_api_key = os.getenv("OPENAI_API_KEY")
+openai_api_key = os.environ["OPENAI_API_KEY"] = "sess-bmQne3AjShF5VgUhlh9GKbV57wIhrcdlDTbcVBMs"
 model = OpenAI(api_key=openai_api_key)
-
 app = Flask(__name__)
 
 r = ""
@@ -60,7 +59,7 @@ def text_result():
         ]
     )
     time.sleep(5)
-    return render_template("text_result.html", r=r[0])
+    return render_template("text_result.html", r=r.choices[0].message.content)
 
 
 @app.route("/end", methods=["GET", "POST"])
