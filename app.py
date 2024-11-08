@@ -6,7 +6,7 @@ import os
 import time
 import requests #导入requests库
 
-os.environ["REPLICATE_API_TOKEN"] = "r8_LQBrEtBcljk7Z3uqYNGOIwUoiREHa4u3yeGyC"
+os.environ["REPLICATE_API_TOKEN"] = "r8_emehJY5O1eH4JE8KrwtwRGOm8zNr5uH0CepHN"
 # openai_api_key = os.getenv("OPENAI_API_KEY")
 # model = OpenAI(api_key=openai_api_key)
 app = Flask(__name__)
