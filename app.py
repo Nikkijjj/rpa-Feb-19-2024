@@ -1,18 +1,32 @@
 from flask import Flask, request, render_template
 from flask import redirect, url_for
-from openai import OpenAI
+# from openai import OpenAI
 import replicate
 import os
 import time
+import requests #导入requests库
 
-os.environ["REPLICATE_API_TOKEN"] = "sess-OUnFbyWcUk4GVZHf8kQdyuzCxTwOcEpbM4eynHlS"
-openai_api_key = os.getenv("OPENAI_API_KEY")
-model = OpenAI(api_key=openai_api_key)
+os.environ["REPLICATE_API_TOKEN"] = "r8_LQBrEtBcljk7Z3uqYNGOIwUoiREHa4u3yeGyC"
+# openai_api_key = os.getenv("OPENAI_API_KEY")
+# model = OpenAI(api_key=openai_api_key)
 app = Flask(__name__)
 
 r = ""
 first_time = 1
 
+# 定义与Kimi API交互的函数
+def get_response_from_kimi(question):
+    # 这里需要替换成与Kimi API交互的实际URL和参数
+    url = "https://api.kimi.moonshot.cn/chat"
+    headers = {
+        "Authorization": "sk-XXRfc0pHGePtZyLpQWlUL3RqNa18ZqlHv4bAjIl69Lj8MY7w",  # 替换为你的API密钥
+        "Content-Type": "application/json"
+    }
+    data = {
+        "query": question
+    }
+    response = requests.post(url, headers=headers, json=data)
+    return response.json()
 
 @app.route("/", methods=["GET", "POST"])
 def index():
@@ -47,20 +61,27 @@ def text_gpt():
     return render_template("text_gpt.html")
 
 
+# @app.route("/text_result", methods=["GET", "POST"])
+# def text_result():
+#     q = request.form.get("q")
+#     r = model.chat.completions.create(
+#         model="gpt-3.5-turbo",
+#         messages=[
+#             {
+#                 "role": "user",
+#                 "content": q
+#             }
+#         ]
+#     )
+#     time.sleep(5)
+#     return render_template("text_result.html", r=r.choices[0].message.content)
+
+
 @app.route("/text_result", methods=["GET", "POST"])
 def text_result():
     q = request.form.get("q")
-    r = model.chat.completions.create(
-        model="gpt-3.5-turbo",
-        messages=[
-            {
-                "role": "user",
-                "content": q
-            }
-        ]
-    )
-    time.sleep(5)
-    return render_template("text_result.html", r=r.choices[0].message.content)
+    response = get_response_from_kimi(q)
+    return render_template("text_result.html", r=response['reply'])
 
 @app.route("/text_ntu", methods=["GET", "POST"])
 def text_ntu():
