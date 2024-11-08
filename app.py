@@ -5,7 +5,7 @@ import replicate
 import os
 import time
 
-os.environ["REPLICATE_API_TOKEN"] = "r8_LQBrEtBcljk7Z3uqYNGOIwUoiREHa4u3yeGyC"
+os.environ["REPLICATE_API_TOKEN"] = "sess-OUnFbyWcUk4GVZHf8kQdyuzCxTwOcEpbM4eynHlS"
 openai_api_key = os.getenv("OPENAI_API_KEY")
 model = OpenAI(api_key=openai_api_key)
 app = Flask(__name__)
