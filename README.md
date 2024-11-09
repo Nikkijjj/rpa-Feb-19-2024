@@ -20,6 +20,7 @@
 
 ```bash
 pip install Flask requests replicate
+```
 
 ## 环境变量
 
