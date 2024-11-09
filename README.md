@@ -1,4 +1,4 @@
-# Flask AI文本及图片生成网站with NTU project
+# Flask AI文本及图片生成网站 with NTU project
 
 ## 概述
 这个 Flask 应用程序旨在与各种 API 进行交互，包括聊天机器人 API 和图像生成 API，以提供动态和互动的用户体验。该应用程序由多个路由组成，处理不同的用户请求和响应。
