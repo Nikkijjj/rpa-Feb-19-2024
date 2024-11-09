@@ -39,7 +39,7 @@ pip install Flask requests replicate
 
 运行效果如下所示。
 
-![示例图片](images/图片1.jpg =500x*)
+![示例图片](/images/图片1.png =500x*)
 
 ## 路由
 
