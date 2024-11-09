@@ -20,3 +20,19 @@
 
 ```bash
 pip install Flask requests replicate
+
+# 环境变量
+
+应用程序需要设置以下环境变量：
+
+- `REPLICATE_API_TOKEN`：用于访问图像生成模型的 Replicate API 令牌。
+- `Authorization`：Kimi 聊天机器人 API 的 API 密钥。
+
+在操作系统中设置这些环境变量，或直接在代码中传递。
+
+# 运行应用程序
+
+要运行应用程序，请在终端执行以下命令：
+
+```bash
+python app.py
