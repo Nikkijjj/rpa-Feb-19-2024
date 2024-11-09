@@ -40,3 +40,31 @@ python app.py
 ```
 
 这将启动 Flask 开发服务器，应用程序将在 http://127.0.0.1:5000/   上可访问。
+
+## 路由
+
+以下是路由及其功能的详细说明：
+
+- `/`：首页路由，渲染 `index.html` 模板。
+- `/main`：主交互路由，处理表单提交并渲染带有聊天机器人响应的 `main.html` 模板。
+- `/image_gpt`：图像生成路由，渲染 `image_gpt.html` 模板。
+- `/image_result`：处理图像生成请求，调用 replicate API，并渲染带有生成图像的 `image_result.html` 模板。
+- `/text_gpt`：基于文本的聊天机器人交互路由，渲染 `text_gpt.html` 模板。
+- `/text_result`：处理聊天机器人请求，调用 Kimi API，并渲染带有聊天机器人响应的 `text_result.html` 模板。
+- `/text_ntu`, `/image_ntu`, `/building_ntu`, `/activities_ntu`, `/website_ntu`：与 NTU（南洋理工大学）相关的特定功能的额外路由。
+- `/end`：结束路由，重置 `first_time` 变量并渲染 `end.html` 模板。
+
+## 注意事项
+
+- 应用程序使用全局变量 `first_time` 来跟踪初始表单提交。
+- `get_response_from_kimi` 函数是 `requests` 库的包装器，用于与 Kimi API 交互。
+- `image_result` 函数包括 `time.sleep(5)` 以等待图像生成过程完成。这是一个简单的实现，可能需要在生产使用中替换为更健壮的解决方案。
+- 应用程序假设 HTML 模板位于与 Flask 应用程序相同目录下的 `templates` 目录中。
+
+## 安全和隐私
+
+请确保您的 API 密钥和令牌安全，不要在代码或版本控制系统中暴露。使用环境变量或安全库来管理敏感信息。
+
+## 许可证
+
+该应用程序是开源的，可以在 MIT 许可证的条款下使用和修改。
