@@ -37,3 +37,6 @@ pip install Flask requests replicate
 
 ```bash
 python app.py
+```
+
+这将启动 Flask 开发服务器，应用程序将在 http://127.0.0.1:5000/   上可访问。
