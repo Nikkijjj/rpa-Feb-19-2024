@@ -33,13 +33,13 @@ pip install Flask requests replicate
 
 ## 运行应用程序
 
-要运行应用程序，请在终端执行以下命令：
+为了运行该应用程序，通过Render平台将其上传至云。
 
-```bash
-python app.py
-```
+这将启动 Flask 开发服务器，运行live后，应用程序将在https://rpa-feb192024-jhy.onrender.com 上可访问。
 
-这将启动 Flask 开发服务器，应用程序将在 http://127.0.0.1:5000/   上可访问。
+运行效果如下所示。
+
+![示例图片](images/图片1.jpg =500x*)
 
 ## 路由
 
