@@ -21,7 +21,7 @@
 ```bash
 pip install Flask requests replicate
 
-# 环境变量
+## 环境变量
 
 应用程序需要设置以下环境变量：
 
@@ -30,7 +30,7 @@ pip install Flask requests replicate
 
 在操作系统中设置这些环境变量，或直接在代码中传递。
 
-# 运行应用程序
+## 运行应用程序
 
 要运行应用程序，请在终端执行以下命令：
 
